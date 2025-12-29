@@ -1,6 +1,6 @@
 # joyan-claude-code
 
-Claude Code のユーザーグローバル設定（commands, skills, agents）を Git で管理するためのリポジトリです。
+Claude Code のユーザーグローバル設定（commands, skills, agents）を Git で管理するためのリポジトリ。
 
 ## セットアップ
 
