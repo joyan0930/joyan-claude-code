@@ -7,8 +7,8 @@ Claude Code のユーザーグローバル設定（commands, skills, agents）�
 ### 1. リポジトリをクローン
 
 ```bash
-cd ~/Development
 git clone git@github.com:joyan/joyan-claude-code.git
+cd joyan-claude-code
 ```
 
 ### 2. シンボリックリンクを作成
@@ -21,10 +21,10 @@ git clone git@github.com:joyan/joyan-claude-code.git
 # mv ~/.claude/skills ~/.claude/skills.bak
 # mv ~/.claude/agents ~/.claude/agents.bak
 
-# シンボリックリンクを作成
-ln -s ~/Development/joyan-claude-code/commands ~/.claude/commands
-ln -s ~/Development/joyan-claude-code/skills ~/.claude/skills
-ln -s ~/Development/joyan-claude-code/agents ~/.claude/agents
+# シンボリックリンクを作成（リポジトリのルートで実行）
+ln -s "$(pwd)/commands" ~/.claude/commands
+ln -s "$(pwd)/skills" ~/.claude/skills
+ln -s "$(pwd)/agents" ~/.claude/agents
 ```
 
 ### 3. 確認
@@ -36,9 +36,9 @@ ls -la ~/.claude
 以下のようにシンボリックリンクが作成されていれば成功です：
 
 ```
-commands -> /Users/shinichiro.joya/Development/joyan-claude-code/commands
-skills -> /Users/shinichiro.joya/Development/joyan-claude-code/skills
-agents -> /Users/shinichiro.joya/Development/joyan-claude-code/agents
+commands -> /path/to/joyan-claude-code/commands
+skills -> /path/to/joyan-claude-code/skills
+agents -> /path/to/joyan-claude-code/agents
 ```
 
 ## ディレクトリ構成
