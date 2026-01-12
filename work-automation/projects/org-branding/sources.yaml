@@ -1,0 +1,23 @@
+# projects/org-branding/sources.yaml
+
+project:
+  name: 組織ブランディング
+  code: org-branding
+  status: active
+  priority: medium
+
+meetings: []
+
+slack:
+  channels: []
+  threads: []
+
+documents:
+  confluence: []
+  google_drive: []
+
+systems: []
+
+stakeholders:
+  owner: ""
+  members: []

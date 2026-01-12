@@ -1,0 +1,23 @@
+# projects/looker-analytics-agent/sources.yaml
+
+project:
+  name: Looker Analytics Agent
+  code: looker-analytics-agent
+  status: active
+  priority: medium
+
+meetings: []
+
+slack:
+  channels: []
+  threads: []
+
+documents:
+  confluence: []
+  google_drive: []
+
+systems: []
+
+stakeholders:
+  owner: ""
+  members: []

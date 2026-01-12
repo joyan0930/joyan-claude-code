@@ -1,0 +1,78 @@
+# projects/data-platform/sources.yaml
+
+project:
+  name: データプラットフォーム刷新
+  code: data-platform
+  status: active  # active | on-hold | completed
+  priority: high  # high | medium | low
+
+# 定例ミーティング
+meetings:
+  - name: データ基盤定例
+    calendar_pattern: "データ基盤定例"  # カレンダー検索パターン
+    frequency: weekly
+    day: tuesday
+    docs:
+      - type: agenda
+        url: https://docs.google.com/document/d/xxx
+      - type: notes
+        url: https://docs.google.com/document/d/yyy
+
+  - name: データ戦略レビュー
+    calendar_pattern: "データ戦略"
+    frequency: biweekly
+    docs:
+      - type: slides
+        url: https://docs.google.com/presentation/d/zzz
+
+# Slack チャンネル・スレッド
+slack:
+  channels:
+    - id: C_DATA_PLATFORM
+      name: "#data-platform"
+      watch: true  # アクションアイテム抽出対象
+
+    - id: C_DATA_INFRA
+      name: "#data-infra"
+      watch: true
+
+  # 重要な進行中スレッド (手動追加/自動検出)
+  threads:
+    - channel: C_DATA_PLATFORM
+      ts: "1704067200.000000"
+      topic: "BigQuery コスト最適化"
+
+# ドキュメント
+documents:
+  confluence:
+    - title: データ基盤アーキテクチャ
+      url: https://example.atlassian.net/wiki/xxx
+      type: architecture
+
+    - title: データ品質ガイドライン
+      url: https://example.atlassian.net/wiki/yyy
+      type: guideline
+
+  google_drive:
+    - title: FY25 データ戦略
+      url: https://drive.google.com/xxx
+      type: strategy
+
+# 関連システム・リポジトリ
+systems:
+  - name: data-platform-core
+    repo: https://github.com/example/data-platform-core
+
+  - name: looker-models
+    repo: https://github.com/example/looker-models
+
+# ステークホルダー
+stakeholders:
+  owner: jo@example.com
+  members:
+    - name: 田中
+      slack: "@tanaka"
+      role: Tech Lead
+    - name: 鈴木
+      slack: "@suzuki"
+      role: PM

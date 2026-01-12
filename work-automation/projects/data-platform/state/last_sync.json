@@ -1,0 +1,13 @@
+{
+  "last_sync": "2025-01-12T09:00:00+09:00",
+  "sources_checked": {
+    "calendar": true,
+    "slack": true,
+    "documents": true
+  },
+  "stats": {
+    "new_decisions": 0,
+    "updated_actions": 0,
+    "new_actions": 0
+  }
+}

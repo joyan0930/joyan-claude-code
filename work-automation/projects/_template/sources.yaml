@@ -1,0 +1,54 @@
+# projects/_template/sources.yaml
+
+project:
+  name: "{プロジェクト名}"
+  code: "{project-code}"
+  status: active  # active | on-hold | completed
+  priority: medium  # high | medium | low
+
+# 定例ミーティング
+meetings:
+  - name: "{ミーティング名}"
+    calendar_pattern: "{カレンダー検索パターン}"
+    frequency: weekly  # weekly | biweekly | monthly
+    day: monday  # monday | tuesday | ...
+    docs:
+      - type: agenda
+        url: https://docs.google.com/document/d/xxx
+      - type: notes
+        url: https://docs.google.com/document/d/yyy
+
+# Slack チャンネル・スレッド
+slack:
+  channels:
+    - id: C_CHANNEL_ID
+      name: "#channel-name"
+      watch: true  # アクションアイテム抽出対象
+
+  # 重要な進行中スレッド (手動追加/自動検出)
+  threads: []
+
+# ドキュメント
+documents:
+  confluence:
+    - title: "{ドキュメントタイトル}"
+      url: https://example.atlassian.net/wiki/xxx
+      type: architecture  # architecture | guideline | spec | other
+
+  google_drive:
+    - title: "{ドキュメントタイトル}"
+      url: https://drive.google.com/xxx
+      type: strategy  # strategy | report | other
+
+# 関連システム・リポジトリ
+systems:
+  - name: "{システム名}"
+    repo: https://github.com/org/repo
+
+# ステークホルダー
+stakeholders:
+  owner: owner@example.com
+  members:
+    - name: "{名前}"
+      slack: "@slack-handle"
+      role: "{役割}"

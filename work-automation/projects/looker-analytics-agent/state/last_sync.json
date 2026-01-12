@@ -1,0 +1,13 @@
+{
+  "last_sync": null,
+  "sources_checked": {
+    "calendar": false,
+    "slack": false,
+    "documents": false
+  },
+  "stats": {
+    "new_decisions": 0,
+    "updated_actions": 0,
+    "new_actions": 0
+  }
+}
