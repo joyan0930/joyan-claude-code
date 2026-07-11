@@ -55,3 +55,32 @@ joyan-claude-code/
 
 このリポジトリ内のファイルを編集すると、Claude Code に即座に反映されます。
 変更を Git で管理し、複数マシン間で設定を同期できます。
+
+## Advisor-Executor パターン
+
+高コストモデル（Fable/Opus 高effort）を思考・計画・監査に限定し、実行を安価なモデルに
+委譲するコスト最適化構成。参考: [Anthropic Advisor tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool)
+
+### エージェント
+
+| エージェント | モデル / effort | 役割 |
+|-------------|----------------|------|
+| `executor-lite` | Haiku / low | 機械的タスク（検索・リネーム・fmt・ボイラープレート） |
+| `executor` | Sonnet / medium | 標準実装タスク（デフォルト実行役） |
+| `executor-pro` | Opus / low | 複雑だが計画確定済みの実行（複数ファイル横断等） |
+| `advisor` | Fable / xhigh | 行き詰まり・設計判断の相談役（読み取り専用） |
+| `auditor` | Opus / high | 完了前の品質監査（読み取り専用） |
+
+### スキル
+
+| スキル | 用途 |
+|--------|------|
+| `/advisor-mode` | オーケストレーションモード起動。計画→委譲→相談→監査のループを規律化 |
+| `/consult` | `advisor` への相談（2回失敗・設計分岐・高リスク操作時） |
+| `/audit` | `auditor` による完了前監査（コミット・PR・完了報告の前に） |
+
+### 運用ルール（要点）
+
+- オーケストレーターは自分で実装しない（1〜2行の自明な修正を除く）
+- Executor は同じエラーで2回失敗したら HELP_NEEDED で停止 → Advisor に相談
+- 非自明な変更は Auditor の PASS を得てから完了報告
